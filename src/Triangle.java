@@ -109,10 +109,14 @@ public class Triangle extends Shape{
 		else return false;
 	}
 
-	public boolean diffShape(Triangle tr) {
+	public boolean diffShape(Shape sh) {
+		
 		boolean diff = false;
 		Object [] o = new Object [3];
 		for (int i = 0; i < o.length; i++) {
+			if (sh instanceof Triangle){
+			Triangle tr = new Triangle();
+			tr = (Triangle) sh;
 			o[0] = tr.getA();
 			o[1] = tr.getB();
 			o[2] = tr.getC();
@@ -120,6 +124,7 @@ public class Triangle extends Shape{
 				diff = true;
 			}
 			else diff = false;
+		}
 		}
 		
 		return diff;

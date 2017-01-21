@@ -29,7 +29,7 @@ public class Board {
 	
 	public void delShape (Shape a){
 		for (int i = 0; i < sh.length; i++) {
-			if(sh[i] !=null && sh[i].getClass().equals(a.getClass())  /* && (sh[i]).diffShape(a)==true */){
+			if(sh[i] !=null && sh[i].getClass().equals(a.getClass())   && (sh[i]).diffShape(a)==true ){
 				sh[i] = null;
 			}
 		}

@@ -67,10 +67,13 @@ public class Circle extends Shape {
 		
 	}
 	
-	public boolean diffShape(Circle cl) {
+	public boolean diffShape(Shape sh) {
 		boolean diff = false;
 		Object [] o = new Object [3];
 		for (int i = 0; i < o.length; i++) {
+			if (sh instanceof Circle){
+				Circle cl = new Circle();
+				cl = (Circle) sh;
 			o[0] = cl.getA();
 			o[1] = cl.getB();
 			if( cl.getA().diffPoint(this.getA()) && cl.getB().diffPoint(this.getB())){
@@ -78,7 +81,7 @@ public class Circle extends Shape {
 			}
 			else diff = false;
 		}
-		
+		}
 		return diff;
 	}
 

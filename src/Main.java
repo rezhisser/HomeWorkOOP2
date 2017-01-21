@@ -54,12 +54,13 @@ public class Main {
 		Board brd = new Board();
 		brd.addShape(tr);
 		brd.addShape(tr2);
-	//	brd.addShape(cr);
+		brd.addShape(cr);
 	//	brd.addShape(sq);
 	//	brd.addShape(tr);
 		System.out.println("! - " + Arrays.toString(brd.viewBoard()));
 		
-		brd.delShape(tr);
+		brd.delShape(tr2);
+		brd.delShape(cr);
 		System.out.println("!! - " + Arrays.toString(brd.viewBoard()));
 		
 		System.out.println(brd.isContains(sq));

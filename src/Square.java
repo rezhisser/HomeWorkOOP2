@@ -137,10 +137,13 @@ public class Square extends Shape{
 		else return false;
 	}
 	
-	public boolean diffShape(Square sq) {
+	public boolean diffShape(Shape sh) {
 		boolean diff = false;
 		Object [] o = new Object [3];
 		for (int i = 0; i < o.length; i++) {
+			if (sh instanceof Square){
+				Square sq = new Square();
+				sq = (Square) sh;
 			o[0] = sq.getA();
 			o[1] = sq.getB();
 			o[2] = sq.getC();
@@ -150,7 +153,7 @@ public class Square extends Shape{
 			}
 			else diff = false;
 		}
-		
+		}
 		return diff;
 	}
 	
