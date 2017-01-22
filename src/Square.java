@@ -65,6 +65,10 @@ public class Square extends Shape{
 		this.d = d;
 	}
 
+	/**
+	 * Метод вычисляет длинну стороны ab квадрата 
+	 * @return
+	 */
 
 	private double abSize(){
 		double ax = a.getX(); //aX
@@ -76,6 +80,11 @@ public class Square extends Shape{
 		return ab;
 		
 	}
+	
+	/**
+	 * Метод вычисляет длинну стороны bc квадрата 
+	 * @return
+	 */
 	private double bcSize(){
 		double bx = b.getX(); //bX
 		double cx = c.getX(); //cX
@@ -86,6 +95,11 @@ public class Square extends Shape{
 		return bc;
 		
 	}
+	
+	/**
+	 * Метод вычисляет длинну стороны cd квадрата 
+	 * @return
+	 */
 	private double cdSize(){
 		double cx = c.getX(); //cX
 		double dx = d.getX(); //dX
@@ -96,7 +110,10 @@ public class Square extends Shape{
 		return cd;
 		
 	}
-	
+	/**
+	 * Метод вычисляет длинну стороны da квадрата 
+	 * @return
+	 */
 	private double daSize(){
 		double dx = d.getX(); //dX
 		double ax = a.getX(); //aX
@@ -108,12 +125,20 @@ public class Square extends Shape{
 		
 	}
 
+	/**
+	 * Метод вычисляет площадь квадрата
+	 */
+	
 	@Override
 	public double getArea() {
 		double ab = abSize();
 		double s = ab*ab;
 		return s;
 	}
+	
+	/**
+	 * Метод вычисляет периметр квадрата
+	 */
 
 	@Override
 	double getPerimetr() {
@@ -126,6 +151,11 @@ public class Square extends Shape{
 		return p;
 	}
 	
+	
+	/**
+	 * Метод определяет, является ли фигура квадратом 
+	 * @return - возвращает true - если ДА, и false - если НЕТ
+	 */
 	public boolean isSquare(){
 		double ab = abSize();
 		double bc = bcSize();
@@ -137,9 +167,18 @@ public class Square extends Shape{
 		else return false;
 	}
 	
+	/**
+	 * Метод сравнивает два квадрата 
+	 * Мравниваются координаты точек, образующих два квадрата
+	 * Создаем массив объектов, в который помещаем объект Point, из которых состоит квдрат
+	 * Входящий параметр - объект Shape, который приводим к объекту Square
+	 * Сравниваем координаты двух объектов Square с помощью метода diffPoint
+	 * 
+	 */
+	
 	public boolean diffShape(Shape sh) {
 		boolean diff = false;
-		Object [] o = new Object [3];
+		Object [] o = new Object [4];
 		for (int i = 0; i < o.length; i++) {
 			if (sh instanceof Square){
 				Square sq = new Square();
@@ -158,6 +197,7 @@ public class Square extends Shape{
 	}
 	
 
+	// Arrays.toString(getA().toStr()) - выводит координаты точек в виде двумерного массива
 
 	@Override
 	public String toString() {

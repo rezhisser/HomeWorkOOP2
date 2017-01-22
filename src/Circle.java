@@ -42,12 +42,20 @@ public class Circle extends Shape {
 	}
 
 
+	/**
+	 * Метод вычисляет площадь Круга
+	 */
+	
 	@Override
 	public double getArea() {
 		double p = getPerimetr();
 		double s = (Math.pow(p, 2))/(4*Math.PI);
 		return s;
 	}
+	
+	/**
+	 * Метод вычисляет периметр круга
+	 */
 	
 	@Override
 	double getPerimetr(){
@@ -56,6 +64,10 @@ public class Circle extends Shape {
 		
 	}
 	
+	/**
+	 * метод вычисляет радиус круга по заданным координатам двух точек
+	 * @return
+	 */
 	private double radius(){
 		double ax = a.getX(); //aX
 		double bx = b.getX(); //bX
@@ -67,9 +79,18 @@ public class Circle extends Shape {
 		
 	}
 	
+	/**
+	 * Метод сравнивает два круга 
+	 * Мравниваются координаты точек, образующих два круга
+	 * Создаем массив объектов , в который помещаем объект Point, из которых состоит квадрт
+	 * Входящий параметр - объект Shape, который приводим к объекту Cirkle
+	 * Сравниваем координаты двух объектов Cirkle с помощью метода diffPoint
+	 * 
+	 */
+	
 	public boolean diffShape(Shape sh) {
 		boolean diff = false;
-		Object [] o = new Object [3];
+		Object [] o = new Object [2];
 		for (int i = 0; i < o.length; i++) {
 			if (sh instanceof Circle){
 				Circle cl = new Circle();
@@ -84,7 +105,9 @@ public class Circle extends Shape {
 		}
 		return diff;
 	}
-
+	
+	
+	 // Arrays.toString(getA().toStr()) - выводит координаты точек в виде двумерного массива
 
 	@Override
 	public String toString() {
