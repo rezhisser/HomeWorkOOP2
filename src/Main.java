@@ -55,23 +55,27 @@ public class Main {
 		brd.addShape(tr);
 		brd.addShape(tr2);
 		brd.addShape(cr);
-	//	brd.addShape(sq);
-	//	brd.addShape(tr);
 		System.out.println("! - " + Arrays.toString(brd.viewBoard()));
 		
-		brd.delShape(tr2);
 	//	brd.delShape(cr);
+		
+		brd.delShape(tr2);
+		brd.delShape(cr);
+		brd.addShape(sq);
+		brd.addShape(tr);
+		brd.delShape(tr);
+		brd.addShape(sq);
+		brd.addShape(tr);
+		brd.addShape(tr);
+		brd.addShape(tr);
 		System.out.println("!! - " + Arrays.toString(brd.viewBoard()));
-		
-		System.out.println("+++ " + brd.isContains(tr));
-		
-		System.out.println(brd.getAreFull());
-		
+
+		/*
 		System.out.println(p1.getX() + " " + p1.getY());
 		System.out.println(p3.getX() + " " + p3.getY());
 		
 		System.out.println(p1.diffPoint(p5));
-		/*
+		
 		System.out.println("p1.getX()=" + p1.getX() + " " + "p2.getX()=" + p2.getX() + " " + p1.diffPointX(p2));
 		System.out.println("p1.getX()=" + p1.getX() + " " + "p3.getX()=" + p3.getX() + " " + p1.diffPointX(p3));
 		System.out.println("p2.getX()=" + p2.getX() + " " + "p1.getX()=" + p1.getX() + " " + p2.diffPointX(p1));

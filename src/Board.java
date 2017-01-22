@@ -33,17 +33,32 @@ public class Board {
 	/**
 	 * Метод удаляет фигуру Shape из доски Board
 	 * @param a - входящий параметр - объект Shape
-	 * Метод проверяет каждую ячейку массива на null, и удаляет фигуру если:
-	 * обрабатываемая фигура является того же класса, что и удаляемая фигура, 
-	 * координаты обрабатываемой и удаляемой фигуры одинковые, См. методы diffShape и diffPoint
+	 * Метод проверяет каждую ячейку массива на null, и удаляет фигуру если такая фигура существует, См. метод isContains()
 	 */
 	
 	public void delShape (Shape a){
 		for (int i = 0; i < sh.length; i++) {
-			if(sh[i] !=null && sh[i].getClass().equals(a.getClass())   && (sh[i]).diffShape(a)==true ){
+			if(sh[i] !=null && isContains(sh[i], a)==true ){
 				sh[i] = null;
 			}
 		}
+		
+	}
+	
+	/**
+	 * Метод сравнивает две фигуры Shape
+	 * сравнивается класс фигур и координаты, см diffShape
+	 * @param a - сравниваемые объекты Shape
+	 * @param b - сравниваемые объекты Shape
+	 * @return - возвращает true - если фигуры равны, и false - если фигуры НЕ равны
+	 */
+	public boolean isContains(Shape a, Shape b){
+		boolean isContains = false;
+			if(a.getClass().equals(b.getClass())   && (a).diffShape(b)==true ){
+				isContains = true;	
+			
+		}
+		return isContains;
 		
 	}
 	
@@ -54,18 +69,6 @@ public class Board {
 	
 	public Shape [] viewBoard(){
 		return sh;
-		
-	}
-	
-	
-	public boolean isContains(Shape a){
-		boolean b = false;
-		for (int i = 0; i < sh.length; i++) {
-			if(sh[i] !=null && sh[i].getClass().equals(a.getClass())   && (sh[i]).diffShape(a)==true ){
-				b = true;
-			}
-		}
-		return b;
 		
 	}
 	
