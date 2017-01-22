@@ -1,8 +1,8 @@
 
 public class Point {
 
-	double x;
-	double y;
+	private double x;
+	private double y;
 	public Point() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -25,6 +25,7 @@ public class Point {
 		this.y = y;
 	}
 
+	
 	/**
 	 * Преобразовывает точку в двухмерный массив
 	 * @return
@@ -54,6 +55,13 @@ public class Point {
 		else diff = false;
 		return diff;
 	}
+	@Override
+	public String toString() {
+		return "Point [x=" + x + ", y=" + y + "]";
+	}
+	
+	
+	
 	
 	/*
 	 * методы нужны определения направления лини для обсчета выпуклого многогольника

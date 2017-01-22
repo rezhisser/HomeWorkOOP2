@@ -51,9 +51,9 @@ public class Triangle extends Shape{
 	
 	@Override
 	public double getArea() {
-		double ab = abSize();
-		double bc = bcSize();
-		double ca = caSize();
+		double ab = getSize(a,b);
+		double bc = getSize(b,c);
+		double ca = getSize(c,a);
 		double pp = getPerimetr()/2;
 		double s = Math.sqrt((pp*(pp-ab)*(pp-bc)*(pp-ca)));
 		
@@ -61,15 +61,17 @@ public class Triangle extends Shape{
 		
 		
 	}
-	
+
+
+
 	/**
 	 * Метод расчитывает периметр треугольника
 	 */
 	@Override
 	public double getPerimetr() {
-		double ab = abSize();
-		double bc = bcSize();
-		double ca = caSize();
+		double ab = getSize(a,b);
+		double bc = getSize(b,c);
+		double ca = getSize(c,a);
 		double p = ab+bc+ca;
 		
 		return p;
@@ -78,56 +80,28 @@ public class Triangle extends Shape{
 	}
 	
 	/**
-	 * Метод вычисляет длинну стороны ab треугольника 
+	 * Метод расчитывает растояние между двумя точками
+	 * @param a
+	 * @param b
 	 * @return
 	 */
-	private double abSize(){
-		double ax = a.getX(); //aX
-		double bx = b.getX(); //bX
-		double ay = a.getY(); //aY
-		double by = b.getY(); //bY
-		double ab = Math.sqrt((ax-bx)*(ax-bx) +(ay-by)*(ay-by));
+
+	
+	private double getSize(Point a, Point b){
+		return Math.sqrt(Math.pow(a.getX()-b.getX(),2)+Math.pow(a.getY() - b.getY(),2));
 		
-		return ab;
 		
 	}
-	/**
-	 * Метод вычисляет длинну стороны bc треугольника 
-	 * @return
-	 */
-	private double bcSize(){
-		double bx = b.getX(); //bX
-		double cx = c.getX(); //cX
-		double by = b.getY(); //bY
-		double cy = c.getY(); //cY
-		double bc = Math.sqrt((bx-cx)*(bx-cx) +(by-cy)*(by-cy));
-		
-		return bc;
-		
-	}
-	/**
-	 * Метод вычисляет длинну стороны ca треугольника 
-	 * @return
-	 */
-	private double caSize(){
-		double cx = c.getX(); //cX
-		double ax = a.getX(); //aX
-		double cy = c.getY(); //cY
-		double ay = a.getY(); //aY
-		double ca = Math.sqrt((cx-ax)*(cx-ax) +(cy-ay)*(cy-ay));
-		
-		return ca;
-		
-	}
+
 	
 	/**
 	 * Метод определяет, является ли фигура треугольником 
 	 * @return - возвращает true - если ДА, и false - если НЕТ
 	 */
 	public boolean isTriangle (){
-		double ab = abSize();
-		double bc = bcSize();
-		double ca = caSize();
+		double ab = getSize(a,b);
+		double bc = getSize(b,c);
+		double ca = getSize(c,a);
 		if (ab<(bc+ca) && bc<(ab+ca) && ca<(ab+bc)){
 			return true;
 		}

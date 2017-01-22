@@ -31,6 +31,23 @@ public class Board {
 	}
 	
 	/**
+	 * Метод добавляет фигуру на доску
+	 * @param a - фигура
+	 * @param b - место на доске (от 1 до 4)
+	 */
+	
+	public void addShape (Shape a, int b){
+		b=b-1;		
+		if (b >= 0 && b <=3){
+		if (sh[b]==null){
+					sh[b] = a;
+				}
+				else System.out.println("Данное место уже занято");
+		}
+		else System.out.println("Введите число от 1 до 4");
+	}
+	
+	/**
 	 * Метод удаляет фигуру Shape из доски Board
 	 * @param a - входящий параметр - объект Shape
 	 * Метод проверяет каждую ячейку массива на null, и удаляет фигуру если такая фигура существует, См. метод isContains()

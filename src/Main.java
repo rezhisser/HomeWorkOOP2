@@ -35,7 +35,7 @@ public class Main {
 		}
 		else System.out.println("Shape is not Triangle");
 		
-		Triangle tr3 = new Triangle(p1, p2, p3);
+	//	Triangle tr3 = new Triangle(p1, p2, p3);
 		
 		
 		
@@ -52,22 +52,16 @@ public class Main {
 		else System.out.println("Shape is not Square или введите координаты последовательно");
 		
 		Board brd = new Board();
-		brd.addShape(tr);
-		brd.addShape(tr2);
-		brd.addShape(cr);
+		brd.addShape(tr,1);
+		brd.addShape(tr,1);
+		brd.addShape(tr2,2);
+		brd.addShape(cr,3);
+		brd.addShape(cr,4);
 		System.out.println("! - " + Arrays.toString(brd.viewBoard()));
 		
-	//	brd.delShape(cr);
-		
-		brd.delShape(tr2);
 		brd.delShape(cr);
-		brd.addShape(sq);
-		brd.addShape(tr);
-		brd.delShape(tr);
-		brd.addShape(sq);
-		brd.addShape(tr);
-		brd.addShape(tr);
-		brd.addShape(tr);
+		
+
 		System.out.println("!! - " + Arrays.toString(brd.viewBoard()));
 
 		/*
